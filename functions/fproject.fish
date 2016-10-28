@@ -2,13 +2,13 @@ function __fproject_help
 
   echo -e "fproject\n"
 
-  echo -e "fproject open PROJECT_NAME \t Open a project";
+  echo -e "fproject open PROJECT_NAME \t\t Open a project";
 
-  echo -e "fproject new [PROJECT_NAME] \t Create a new project";
+  echo -e "fproject new [PROJECT_NAME] [TEMPLATE] \t Create a new project";
 
-  echo -e "fproject path PATH \t\t Set the default project path";
+  echo -e "fproject path PATH \t\t\t Set the default project path";
 
-  echo -e "fproject help \t\t\t Show this help";
+  echo -e "fproject help \t\t\t\t Show this help";
 
 end
 
@@ -77,6 +77,25 @@ function __fproject_new
   else
 
     mkdir -p $project_path; and cd $project_path;
+
+    if [ (count $argv) -gt 2 ]
+      set -l template $argv[3];
+
+      set -l template_file (dirname (status -f))"/__fproject_template_$template.fish";
+      if not test -e $template_file
+        echo -n "Template "; set_color red; echo " does not exist."; set_color normal;
+        return 1;
+      end
+
+      set -l template_cmd __fproject_template_$template;
+
+      if [ (count $argv) -gt 3 ]
+        set template_cmd $template_cmd $argv[4..(count $argv)];
+      end
+
+      eval $template_cmd;
+
+    end
 
   end
 
