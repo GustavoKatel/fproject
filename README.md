@@ -15,7 +15,17 @@ fisher GustavoKatel/fproject
 ## Usage
 
 ```fish
-fproject
+# Opens a project
+fproject open PROJECT_NAME
+
+# Creates a new project
+fproject new [PROJECT_NAME]
+
+# Set the default project path
+fproject path PATH
+
+# Show this help
+fproject help
 ```
 
 [travis-link]: https://travis-ci.org/GustavoKatel/fproject

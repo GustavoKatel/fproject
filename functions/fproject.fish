@@ -1,6 +1,16 @@
 function __fproject_help
 
-  echo "Help";
+  echo "# Opens a project";
+  echo "fproject open PROJECT_NAME";
+
+  echo "# Creates a new project";
+  echo "fproject new [PROJECT_NAME]";
+
+  echo "# Set the default project path";
+  echo "fproject path PATH";
+
+  echo "# Show this help";
+  echo "fproject help";
 
 end
 
