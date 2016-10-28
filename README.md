@@ -19,7 +19,7 @@ fisher GustavoKatel/fproject
 fproject open PROJECT_NAME
 
 # Creates a new project
-fproject new [PROJECT_NAME]
+fproject new [PROJECT_NAME] [TEMPLATE]
 
 # Set the default project path
 fproject path PATH
