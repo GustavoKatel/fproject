@@ -1,16 +1,14 @@
 function __fproject_help
 
-  echo "# Opens a project";
-  echo "fproject open PROJECT_NAME";
+  echo -e "fproject\n"
 
-  echo "# Creates a new project";
-  echo "fproject new [PROJECT_NAME]";
+  echo -e "fproject open PROJECT_NAME \t Open a project";
 
-  echo "# Set the default project path";
-  echo "fproject path PATH";
+  echo -e "fproject new [PROJECT_NAME] \t Create a new project";
 
-  echo "# Show this help";
-  echo "fproject help";
+  echo -e "fproject path PATH \t\t Set the default project path";
+
+  echo -e "fproject help \t\t\t Show this help";
 
 end
 
@@ -121,6 +119,9 @@ function fproject
 
     case path
       __fproject_set_path $argv;
+
+    case help
+      __fproject_help;
 
   end # switch
 
